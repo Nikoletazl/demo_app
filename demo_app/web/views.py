@@ -1,11 +1,8 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.views.generic import TemplateView
+from django.views import generic as views
 
 from demo_app.web.models import Item
 
 
-class IndexView(TemplateView):
-    model = Item
+class IndexView(views.ListView):
     template_name = 'index.html'
+    model = Item
